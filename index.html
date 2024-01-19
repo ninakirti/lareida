@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lareida</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <p>hello</p>
-</body>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openMember(event, 'Dieter')">Dieter</button>
+      <button class="tablinks" onclick="openMember(event, 'Linkia')">Linkia</button>
+      <button class="tablinks" onclick="openMember(event, 'Kira')">Kira</button>
+      <button class="tablinks" onclick="openMember(event, 'Niki')">Niki</button>
+      <button class="tablinks" onclick="openMember(event, 'Kao')">Kao</button>
+      <button class="tablinks" onclick="openMember(event, 'Nina')">Nina</button>
+    </div>
+
+    
+    <div id="Dieter" class="tabcontent">
+        <h3>Dieter</h3>
+        <p>A Tero le gustan los Teslas.</p>
+    </div>
+
+    <div id="Linkia" class="tabcontent">
+        <h3>Linkia</h3>
+        <p>Linkia hace una salsa muy, muy rica.</p>
+    </div>
+
+    <div id="Niki" class="tabcontent">
+      <h3>Niki</h3>
+      <p>Niki viaja por el mundo como una Barbie.</p>
+    </div>
+
+    <div id="Kao" class="tabcontent">
+      <h3>Kao</h3>
+      <p>Kao es un piloto al que le gustan los coches con poder.</p>
+    </div>
+
+    <div id="Nina" class="tabcontent">
+        <h3>Nina</h3>
+        <p>Nina hizo esta página web. :)</p>
+    </div>
+
+    <script>
+      function openMember(evt, name) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(name).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
 </html>
